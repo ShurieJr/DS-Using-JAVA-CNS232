@@ -2,10 +2,10 @@ public class Circle {
     //variables
     double radius;
     //constructors
-    Circle(){
+    Circle(){ //no argument
         radius = 1.0;
     }
-    Circle(double value){
+    Circle(double value){ //parametrized
         radius = value;
     }
     //methods
