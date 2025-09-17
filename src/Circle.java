@@ -9,7 +9,7 @@ public class Circle {
         radius = value;
     }
     //methods
-    double getArea(){
+    double getArea(){  //instance methods
         return radius * radius * Math.PI;
     }
     void displayRadius(){
