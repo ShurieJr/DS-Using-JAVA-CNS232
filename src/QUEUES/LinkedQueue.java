@@ -7,21 +7,21 @@ public class LinkedQueue<T> {
     private int counter;
 
     LinkedQueue(){
-//        head = tail = null;
+    //head = tail = null;
         head =null;
         tail = null;
         counter = 0;
     }
     //operations
-    //isempty
+    //isEmpty()
     boolean isEmpty(){
         return counter == 0;
     }
-    //size
+    //size()
     int size(){
         return counter;
     }
-    //first
+    //first element
     T first(){
         if(isEmpty()){
             System.out.println("The queue is Empty!");
@@ -70,18 +70,46 @@ public class LinkedQueue<T> {
         System.out.print(" ] ");
     }
 
+    //search even and odd
+    void displayEvenOdd(){
+        int oddCount = 0;
+        int evenCount = 0;
+        Node<T> current = head;
+        //odd
+        System.out.println("Odd numbers:");
+        while(current != null){
+            if(((int) current.getElement() % 2) !=0){
+                System.out.println(current.getElement());
+                oddCount++;
+            }
+            current = current.getNext();
+        }
+        System.out.println("odd count: " + oddCount);
+        //even
+        System.out.println("---------------------");
+        current = head;
+        System.out.println("Even numbers:");
+        while(current != null){
+            if((int)current.getElement() % 2 == 0) {
+                System.out.println(current.getElement());
+                evenCount++;
+            }
+            current = current.getNext();
+        }
+        System.out.println("Even Count: " + evenCount);
+    }
+
 
     static void main() {
-        LinkedQueue<String> names = new LinkedQueue<>();
-        names.enqueue("Ali");
-        names.enqueue("Osman");
-        names.enqueue("Hawa");
-        names.enqueue("Warsame");
+        LinkedQueue<Integer> numbers = new LinkedQueue<>();
+        numbers.enqueue(10);
+        numbers.enqueue(12);
+        numbers.enqueue(11);
+        numbers.enqueue(39);
+        numbers.enqueue(37);
 
-       String element =  names.dequeue();
-        System.out.println("Removed: " + element );
-        System.out.println("Size: " + names.size());
-        System.out.println("First element: " + names.first());
-        names.displayElements();
+      numbers.displayEvenOdd();
+        System.out.println("-------------");
+        numbers.displayElements();
     }
 }
