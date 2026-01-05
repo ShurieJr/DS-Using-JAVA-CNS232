@@ -36,25 +36,44 @@ public class Sorting <T> {
         }
     }
 
+    //bubble sort
+    static void bubbleSort(int[] data){
+        int size= data.length;
+        int temp;
+       // System.out.println("bubble sort ......");
+        for(int index=size-1; index >= 0 ; index--){
+           // System.out.println("pass: " + index);
+            for(int scan=0; scan < index; scan++ ){
+                //System.out.println(scan + " , " + (scan+1));
+                if(data[scan] > data[scan+1]){
+                    //swap
+                    temp = data[scan];
+                    data[scan] = data[scan+1];
+                    data[scan+1] = temp;
+                }
+            }
+        }
+        //System.out.println("----------------");
+    }
 
     //main method
     static void main() {
-       Integer[] marks = {23,100,2,101,3};
+       int[] marks = {100,3,11,7,10};
        String[] names = {"Osman","Ali","Gedi","Farah","Hawa"};
        Character[] gradeLetter = {'D','A' , 'C' , 'B' , 'F'};
 
         System.out.println("Unsorted array:");
         System.out.println(Arrays.toString(marks));
-        System.out.println(Arrays.toString(names));
-        System.out.println(Arrays.toString(gradeLetter));
-
+//        System.out.println(Arrays.toString(names));
+//        System.out.println(Arrays.toString(gradeLetter));
+        bubbleSort(marks);
         System.out.println("Sorted Array:");
-        Sorting.<Integer>genericSelectionSort(marks);
-        Sorting.<String>genericSelectionSort(names);
-        Sorting.<Character>genericSelectionSort(gradeLetter);
+//        Sorting.<Integer>genericSelectionSort(marks);
+//        Sorting.<String>genericSelectionSort(names);
+//        Sorting.<Character>genericSelectionSort(gradeLetter);
 
         System.out.println(Arrays.toString(marks));
-        System.out.println(Arrays.toString(names));
-        System.out.println(Arrays.toString(gradeLetter));
+//        System.out.println(Arrays.toString(names));
+//        System.out.println(Arrays.toString(gradeLetter));
     }
 }
